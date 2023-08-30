@@ -16,7 +16,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from respuestas.views import SolicitanteCreate, SolicitanteList
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+
+    path('sol_list', view=SolicitanteList.as_view(), name='solicitante_list'),
+    path('sol_create', view=SolicitanteCreate.as_view(), name='solicitante_create'),
 ]
