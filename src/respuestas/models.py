@@ -37,6 +37,9 @@ class Solicitud(models.Model):
     respuesta = models.FileField(upload_to="respuestas", blank=True, null=True)
     clave = models.CharField(max_length=100, blank=True, null=True)
 
+    def __str__(self) -> str:
+        return f'{self.solicitante} - {self.fecha_limite}'
+
 
 class Registro(models.Model):
     """Modelo Registro.
